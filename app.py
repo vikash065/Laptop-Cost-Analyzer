@@ -25,8 +25,8 @@ with open("df.pkl", "rb") as f:
     df = pickle.load(f)
 
 # Page Config
-st.set_page_config(page_title="Laptop Price Predictor", page_icon="💻", layout="centered")
-st.title("💻 Laptop Price Predictor")
+st.set_page_config(page_title="Laptop Cost Analyzer", page_icon="💻", layout="centered")
+st.title("💻 Laptop Cost Analyzer")
 st.markdown("### Predict the price of your dream laptop with AI 🚀")
 
 # Layout: Two columns for better UI
@@ -35,7 +35,7 @@ col1, col2 = st.columns(2)
 with col1:
     company = st.selectbox('🏢 Brand', df['Company'].unique())
     type = st.selectbox('💻 Type', df['TypeName'].unique())
-    ram = st.selectbox('🔋 RAM (GB)', [2, 4, 6, 8, 12, 16, 24, 32, 64])
+    ram = st.selectbox('🔋 RAM (GB)', [2, 4, 8, 16, 24, 32, 64])
     weight = st.number_input('⚖️ Weight (Kg)', min_value=0.5, max_value=5.0, value=1.5)
     touchscreen = st.selectbox('🖐️ Touchscreen', ['No', 'Yes'])
     ips = st.selectbox('🖼️ IPS Display', ['No', 'Yes'])
